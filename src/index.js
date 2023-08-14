@@ -6,7 +6,7 @@ let customHistory = null;
 const ROUTERS = [];
 
 const EMPTY = {};
-
+console.log("Heyyyyyyyyyyyyyyyy");
 // hangs off all elements created by preact
 const ATTR_KEY = typeof Symbol!=='undefined' ? Symbol.for('preactattr') : '__preactattr_';
 
