@@ -113,9 +113,11 @@ function delegateLinkHandler(e) {
 	if (e.ctrlKey || e.metaKey || e.altKey || e.shiftKey) return;
 
 	let t = e.target;
+	let container = document.getElementsByClassName('rt-embed rt-container')[0];
 	do {
 		if (String(t.nodeName).toUpperCase()==='A' && t.getAttribute('href') && isPreactElement(t)) {
 			if (e.button !== 0) return;
+			if(!(container && container.contains(t))) return;
 			// if link is handled by the router, prevent browser defaults
 			if (routeFromLink(t)) {
 				return prevent(e);
