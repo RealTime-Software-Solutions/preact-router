@@ -118,8 +118,8 @@ function delegateLinkHandler(e) {
 	let t = e.target;
 	let container = document.getElementsByClassName('rt-embed rt-container')[0];
 	do {
+		if(!(container && container.contains(t))) return;
 		if (t.localName === 'a' && t.getAttribute('href')) {
-			if(!(container && container.contains(t))) return;
 			if (t.hasAttribute('data-native') || t.hasAttribute('native')) return;
 			// if link is handled by the router, prevent browser defaults
 			if (routeFromLink(t)) {
